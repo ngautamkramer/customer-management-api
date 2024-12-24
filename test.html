@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>test touch</title>
+</head>
+
+<style type="text/css">
+  #canvas:active{
+   background-color: red;
+ }
+</style>
+	
+<body>
+	<div style="display: flex;justify-content: center;align-items: center;margin-top: 100px;">
+		<button id="canvas" style="width:300px;height: 300px;font-size: 28px;">Check Button</button>	
+	</div>
+</body>
+
+<script type="text/javascript">
+	
+	function startup() {
+	  const el = document.getElementById("canvas");
+	  el.addEventListener("touchstart", handleStart);
+	  el.addEventListener("click", handleClick);
+	  el.addEventListener("touchend", handleEnd);
+	  el.addEventListener("touchcancel", handleCancel);
+	  el.addEventListener("touchmove", handleMove);
+	  console.log("Initialized.");
+	}
+
+	function handleClick(){
+		alert("clicked");
+	}
+
+	function handleStart(){
+		alert("touchstart");
+	}
+
+	function handleEnd(event){
+		alert("touchend");
+	}
+
+	function handleCancel(event){
+		alert("touchcancel");
+	}
+
+	function handleMove(event){
+		alert("touchmove");
+	}
+
+	document.addEventListener("DOMContentLoaded", startup);
+
+</script>
+
+</html>
